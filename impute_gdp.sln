@@ -1,0 +1,13 @@
+def impute_gdp(gdp_past, gdp_pres):
+    res=0
+    if gdp_past-gdp_pres>=2000: res=gdp_pres*10
+    elif 0<(gdp_past-gdp_pres)<=100: res=gdp_pres
+    elif (gdp_past>gdp_pres)&(gdp_pres*10>=gdp_past): res=gdp_pres*10
+    elif (gdp_past>gdp_pres)&(gdp_pres*100>=gdp_past): res=gdp_pres*100
+    elif (gdp_past>gdp_pres)&(gdp_pres*1000>=gdp_past): res=gdp_pres*1000
+    elif (gdp_past<gdp_pres)&(gdp_pres>=gdp_past*10): res=gdp_pres/10
+    elif (gdp_past<gdp_pres)&(gdp_pres>=gdp_past*100): res=gdp_pres/100
+    else: res=gdp_pres
+    
+    if res>100000: return res/10
+    else: return res
