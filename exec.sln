@@ -1,0 +1,39 @@
+for i in range(0, len(Countries)):
+    try:
+        row=impute(am.iloc[i])
+        for j in range(years+1):
+            am.iat[i, j]=row[j]
+    except TypeError:
+        continue
+        
+for i in range(0, len(Countries)):
+    try:
+        row=impute(gdp.iloc[i])
+        for j in range(years+1):
+            gdp.iat[i, j]=row[j]
+    except TypeError:
+        continue
+        
+for i in range(0, len(Countries)):
+    try:
+        row=impute(popud.iloc[i])
+        for j in range(years+1):
+            popud.iat[i, j]=row[j]
+    except TypeError:
+        continue
+
+for i in range(0, len(Countries)):
+    try:
+        row=impute(pop.iloc[i])
+        for j in range(years+1):
+            pop.iat[i, j]=row[j]
+    except TypeError:
+        continue
+
+for i in range(0, len(Countries)):
+    try:
+        row=impute(le.iloc[i])
+        for j in range(years+1):
+            le.iat[i, j]=row[j]
+    except TypeError:
+        continue
